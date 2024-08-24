@@ -1,0 +1,8 @@
+.bg-navbar{
+    background-color: rgba(89, 101, 112, 0.411);
+}
+
+ul li a{
+    color: white;
+    font-size: larger;
+}
