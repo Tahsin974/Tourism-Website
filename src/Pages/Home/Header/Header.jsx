@@ -18,7 +18,7 @@ const Header = () => {
         </div>
         <form className="join join-vertical lg:join-horizontal md:join-horizontal text-black w-4/5">
             {/* Location */}
-            <select className="join-item select select-bordered select-lg w-full">
+            <select className="join-item select select-bordered select-lg w-full bg-white">
               <option disabled selected>
                 Location
               </option>

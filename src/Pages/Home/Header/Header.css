@@ -13,3 +13,7 @@ background-color: rgba(58, 59, 59, 0.747);
 
     
 }
+
+form select{
+    background-color: white !important;
+}
