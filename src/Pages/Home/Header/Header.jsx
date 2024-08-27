@@ -1,6 +1,8 @@
 import { Button } from "react-bootstrap";
-import Menubar from "../../Shared/Menubar/Menubar";
+
 import "./Header.css";
+import Menubar from "../../Shared/Menubar/Menubar";
+
 
 const Header = () => {
   return (

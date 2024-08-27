@@ -1,0 +1,11 @@
+.banner{
+    background-image: url('../../../../images/Banner/Banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.bg-card {
+    background-color: rgba(58, 59, 59, 0.568);
+}

@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 const HolidayPackage = ({holidayPackage}) => {
     const {destination,price,activities,images} = holidayPackage;
     return (
-        <Card className="w-4/5 shadow-md p-2">
+        <Card className=" shadow-md p-2">
         
       <div className='grid grid-cols-7 gap-2 items-center'>
       <img src={images[0]} alt="" className='col-span-4 rounded-badge'/>
