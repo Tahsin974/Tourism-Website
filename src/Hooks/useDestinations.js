@@ -6,7 +6,6 @@ const usePlans = (option) => {
   const baseURL = "http://localhost:5000";
   useEffect(() => {
     axios.get(`${baseURL}/${option}`).then((res) => {
-      console.log(res.data);
       setPlans(res.data)
     });
   }, []);

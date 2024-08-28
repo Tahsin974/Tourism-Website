@@ -10,6 +10,10 @@ import Home from './Pages/Home/Home/Home';
 import Root from './Pages/Root/Root';
 import Login from './Pages/Login/Login/Login';
 import PlaceBooking from './Pages/PlaceBooking/PlaceBooking';
+import AuthProvider from './Provider/AuthProvider/AuthProvider';
+import MyBookings from './Pages/MyBookings/MyBookings/MyBookings';
+import ManageAllBookings from './Pages/ManageAllBookings/ManageAllBookings';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -25,8 +29,18 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/placebooking",
-        element: <PlaceBooking></PlaceBooking>,
+        path: "/placebooking/:desitinationId",
+        element: <PrivateRoute>
+          <PlaceBooking></PlaceBooking>
+        </PrivateRoute>,
+      },
+      {
+        path: "/mybookings",
+        element: <MyBookings></MyBookings>,
+      },
+      {
+        path: "/managebookings",
+        element: <ManageAllBookings></ManageAllBookings>,
       },
       {
         path: "/login",
@@ -38,6 +52,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+     <AuthProvider>
      <RouterProvider router={router} />
+     </AuthProvider>
   </StrictMode>,
 )

@@ -8,11 +8,12 @@ import {
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "./Menubar.css";
-import useFirebase from "../../../Hooks/useFirebase";
+
 import { HashLink } from "react-router-hash-link/dist/react-router-hash-link.cjs.development";
+import useAuthContext from "../../../Context/useAuthContext";
 
 const Menubar = () => {
-  const { user, userSignOut, setUser } = useFirebase();
+  const { user, userSignOut, setUser } = useAuthContext();
   const navigate = useNavigate();
   const logOut = () => {
     userSignOut().then(() => {
@@ -32,7 +33,7 @@ const Menubar = () => {
           <Container fluid>
             <Nav className="justify-content-start flex-grow-1 ps-2">
               {/* <Navbar.Brand as={Link}>Tourism-Website</Navbar.Brand> */}
-              <Link class="btn btn-ghost text-xl">Tourism-Website</Link>
+              <Link to='/home' class="btn btn-ghost text-xl">Tourism-Website</Link>
             </Nav>
 
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -61,10 +62,10 @@ const Menubar = () => {
                       <NavDropdown.Item  >
                       About
                       </NavDropdown.Item>
-                      <NavDropdown.Item as={Link}>
+                      <NavDropdown.Item as={Link} to='/mybookings'>
                       My Bookings
                       </NavDropdown.Item>
-                      <NavDropdown.Item as={Link}>
+                      <NavDropdown.Item as={Link} to='/managebookings'>
                       Manage All Bookings
                       </NavDropdown.Item>
                       <NavDropdown.Item as={Link}>

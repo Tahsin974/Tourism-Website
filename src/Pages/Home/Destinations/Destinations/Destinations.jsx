@@ -4,7 +4,7 @@ import Destination from "../Destination/Destination";
 
 const Destinations = () => {
     const [plans] = usePlans('destinations');
-    console.log(plans)
+   
     return (
         <div id="places" className="my-5 px-5">
             <h1 className="text-6xl font-bold text-center my-14">Explore the Beautiful Places</h1>

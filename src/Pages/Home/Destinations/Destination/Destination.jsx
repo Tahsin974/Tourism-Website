@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import { useNavigate } from "react-router-dom";
 
 const Destination = ({destination}) => {
-    const {imgURL,daysOfTrip,destinationName,price} = destination;
+    const {_id,imgURL,daysOfTrip,destinationName,price} = destination;
 
     const navigate = useNavigate()
-    const handleCard = () =>{
-      navigate('/placebooking')
+    const handleCard = id =>{
+      
+      navigate(`/placebooking/${id}`)
     }
     return (
-        <Card onClick={handleCard} className="w-4/5 shadow-md cursor-pointer">
+        <Card onClick={() => handleCard(_id)} className="w-4/5 shadow-md cursor-pointer">
       <Card.Img variant="top" src={imgURL}  />
       <Card.Body className="grid grid-cols-3 gap-x-4">
         <Card.Title className="font-bold col-span-2">{destinationName}</Card.Title>

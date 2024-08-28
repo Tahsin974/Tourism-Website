@@ -27,7 +27,7 @@ const HolidayPackage = ({holidayPackage}) => {
         </Card.Text>
         
       </Card.Body>
-      <button className='btn bg-neutral-950 hover:bg-neutral-950 text-white'>Book Now!</button>
+      <button className='btn bg-orange-600 border-orange-600 hover:bg-orange-700 hover:border-orange-700 text-white'>Book Now!</button>
     </Card>
     );
 };

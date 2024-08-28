@@ -21,6 +21,7 @@ const useFirebase = () => {
   };
 
   const userSignOut = () => {
+    setLoading(true)
     return signOut(auth)
     
   };
