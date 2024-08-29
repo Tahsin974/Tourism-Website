@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddPlaces = () => {
     const { register, handleSubmit,reset } = useForm();
-    const baseURL = "http://localhost:5000";
+    const baseURL = "https://tourism-website-server-nine.vercel.app";
     const navigate = useNavigate()
     const onSubmit = data => {
         console.log(data)

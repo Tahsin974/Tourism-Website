@@ -8,8 +8,10 @@ import { Helmet } from "react-helmet";
 const PlaceBooking = () => {
   const {desitinationId} = useParams();
   const [destination, setDestination] = useState({});
+  const [holidayPackage, setHolidayPackage] = useState({});
+  
   const {user} = useAuthContext();
-  const baseURL = "http://localhost:5000";
+  const baseURL = "https://tourism-website-server-nine.vercel.app";
   const nameRef = useRef();
   const emailRef = useRef();
   const countryRef = useRef();
@@ -24,9 +26,9 @@ const PlaceBooking = () => {
       name : nameRef.current.value,
       email : emailRef.current.value,
       country : countryRef.current.value,
-      destination : destinationRef.current.value,
+      destinationName : destinationRef.current.value,
       description : descriptionRef.current.value,
-      bookedPlace : destination,
+      bookedPlace : destination ? destination : holidayPackage,
     }
 
     axios.post(`${baseURL}/userBookings`, bookingInfo)
@@ -43,7 +45,21 @@ const PlaceBooking = () => {
     .then((res) => {
       setDestination(res.data)
     });
+
+    
+
+    
   }, []);
+  useEffect(() => {
+    axios.get(`${baseURL}/packagesbooking?id=${desitinationId}`)
+    .then((res) => {
+      console.log(res)
+      setHolidayPackage(res.data)
+    });
+
+    
+  }, []);
+  
   
     return (
       
@@ -101,7 +117,7 @@ const PlaceBooking = () => {
               type="text"
               placeholder="selected place"
               className="input input-bordered w-full bg-white"
-              value={destination?.destinationName || ''}
+              value={destination?.destinationName || holidayPackage?.destinationName || ''}
               ref={destinationRef}
               readOnly
             />
@@ -119,7 +135,7 @@ const PlaceBooking = () => {
             />
           </div>
           <div className=" mt-6">
-            <button className="btn bg-orange-600 border-orange-600 hover:bg-orange-700 hover:border-orange-700 text-white w-full bg-white">Place Booking</button>
+            <button className="btn bg-orange-600 border-orange-600 hover:bg-orange-700 hover:border-orange-700 text-white w-full">Place Booking</button>
     
           </div>
         </form>

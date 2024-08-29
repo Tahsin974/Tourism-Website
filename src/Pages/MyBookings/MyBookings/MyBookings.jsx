@@ -8,13 +8,32 @@ import MyBooking from "../MyBooking/MyBooking";
 const MyBookings = () => {
     const [bookings, setBookings] = useState([]);
     const {user} = useAuthContext();
-  const baseURL = "http://localhost:5000";
+    const baseURL = 'https://tourism-website-server-nine.vercel.app';
   useEffect(() => {
-    axios.get(`${baseURL}/userBookings?email=${user.email}`)
+    if(user.email){
+      axios.get(`${baseURL}/userBookings?email=${user.email}`)
     .then((res) => {
       setBookings(res.data)
     });
-  }, []);
+    }
+  }, [user]);
+  
+
+  const handleCancel = name => {
+    
+    fetch(`${baseURL}/deleteBooking?name=${name}`,{
+      method:'DELETE'
+    })
+    .then(res => res.json())
+    .then(result => {
+      console.log(result)
+      if(result.deletedCount > 0){
+        alert("Booking Cancelled Successfully")
+        const rest = bookings.filter(booking => booking.destinationName !== name);
+        setBookings(rest)
+      }
+    })
+  }
     return (
         <div className="min-h-screen">
             <Helmet>
@@ -28,6 +47,7 @@ const MyBookings = () => {
                     bookings.map(booking => <MyBooking
                     key={booking._id}
                     booking = {booking.bookedPlace}
+                    handleCancel = {handleCancel}
                     ></MyBooking>)
                 }
                 

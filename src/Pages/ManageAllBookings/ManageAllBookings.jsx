@@ -7,7 +7,7 @@ import { Button } from "react-bootstrap";
 
 const ManageAllBookings = () => {
     const [users,setUsers] = useState([]);
-    const baseURL = "http://localhost:5000";
+    const baseURL = "https://tourism-website-server-nine.vercel.app";
     useEffect(() =>{
         axios.get(`${baseURL}/users`)
         .then((res) => {

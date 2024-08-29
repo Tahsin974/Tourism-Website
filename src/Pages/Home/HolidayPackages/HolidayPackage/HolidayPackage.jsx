@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types';
 import { Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 const HolidayPackage = ({holidayPackage}) => {
-    const {destination,price,activities,images} = holidayPackage;
+    const {_id, destinationName,price,activities,images} = holidayPackage;
+    const navigate = useNavigate()
+    const handleBook = id =>{
+      
+      navigate(`/placebooking/${id}`)
+    }
     return (
-        <Card className=" shadow-md p-2">
+        <Card  className=" shadow-md p-2">
         
       <div className='grid grid-cols-7 gap-2 items-center'>
       <img src={images[0]} alt="" className='col-span-4 rounded-badge'/>
@@ -11,7 +17,7 @@ const HolidayPackage = ({holidayPackage}) => {
       </div>
     
       <Card.Body >
-        <Card.Title className="font-bold text-2xl">{destination}</Card.Title>
+        <Card.Title className="font-bold text-2xl">{destinationName}</Card.Title>
         <Card.Text className="font-bold text-xl">
         <ol className='border-t-2 my-4 pt-3 space-y-2'>
         {
@@ -23,11 +29,11 @@ const HolidayPackage = ({holidayPackage}) => {
     
         </Card.Text>
         <Card.Text className="font-bold text-2xl mb-7 mt-3">
-          Price: <del>${price}</del> $1200
+          Price: <del>$4000</del> ${price}
         </Card.Text>
         
       </Card.Body>
-      <button className='btn bg-orange-600 border-orange-600 hover:bg-orange-700 hover:border-orange-700 text-white'>Book Now!</button>
+      <button onClick={() => handleBook(_id)} className='btn bg-orange-600 border-orange-600 hover:bg-orange-700 hover:border-orange-700 text-white'>Book Now!</button>
     </Card>
     );
 };
