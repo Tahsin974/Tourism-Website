@@ -33,7 +33,7 @@ const Login = () => {
                 <input
                   type="email"
                   placeholder="email"
-                  className="input input-bordered w-full"
+                  className="input input-bordered bg-white w-full"
                   required
                 />
               </div>
@@ -44,7 +44,7 @@ const Login = () => {
                 <input
                   type="password"
                   placeholder="password"
-                  className="input input-bordered w-full"
+                  className="input input-bordered bg-white w-full"
                   required
                 />
                 <label className="label">

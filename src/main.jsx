@@ -14,6 +14,7 @@ import AuthProvider from './Provider/AuthProvider/AuthProvider';
 import MyBookings from './Pages/MyBookings/MyBookings/MyBookings';
 import ManageAllBookings from './Pages/ManageAllBookings/ManageAllBookings';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import AddPlaces from './Pages/AddPlaces/AddPlaces';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/managebookings",
         element: <ManageAllBookings></ManageAllBookings>,
+      },
+      {
+        path: "/addplaces",
+        element: <AddPlaces></AddPlaces>,
       },
       {
         path: "/login",

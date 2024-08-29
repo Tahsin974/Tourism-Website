@@ -10,7 +10,7 @@ const PeopleReviews = () => {
   const [plans] = usePlans("destinations");
   return (
     <div className="my-16 flex flex-col justify-center space-y-10 px-5">
-        <h1 className="text-5xl font-bold text-center"> What our customers are saying about us</h1>
+        <h1 className="lg:text-5xl md:text-3xl sm:text-2xl text-xl font-bold text-center"> What our customers are saying about us</h1>
 
       <div className="w-full">
         <Swiper

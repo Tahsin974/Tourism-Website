@@ -34,7 +34,7 @@ const PlaceBooking = () => {
       if(res.data.insertedId){
         alert("Place Booked Successfully")
         e.target.reset()
-        navigate('/home')
+        navigate('/mybookings')
       }
     })
   }
@@ -63,7 +63,7 @@ const PlaceBooking = () => {
               type="text"
               placeholder="Name"
               value={user?.displayName || ''}
-              className="input input-bordered w-full"
+              className="input input-bordered w-full bg-white"
               ref={nameRef}
               required
             />
@@ -76,7 +76,7 @@ const PlaceBooking = () => {
               type="text"
               placeholder="Email"
               value={user?.email || ''}
-              className="input input-bordered w-full"
+              className="input input-bordered w-full bg-white"
               ref={emailRef}
               required
             />
@@ -88,7 +88,7 @@ const PlaceBooking = () => {
             <input
               type="text"
               placeholder="Country"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full bg-white"
               ref={countryRef}
               required
             />
@@ -100,7 +100,7 @@ const PlaceBooking = () => {
             <input
               type="text"
               placeholder="selected place"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full bg-white"
               value={destination?.destinationName || ''}
               ref={destinationRef}
               readOnly
@@ -113,13 +113,13 @@ const PlaceBooking = () => {
             <textarea
               type="text"
               placeholder="Description"
-              className="textarea textarea-bordered w-full"
+              className="textarea textarea-bordered w-full bg-white"
               ref={descriptionRef}
               
             />
           </div>
           <div className=" mt-6">
-            <button className="btn bg-orange-600 border-orange-600 hover:bg-orange-700 hover:border-orange-700 text-white w-full">Place Booking</button>
+            <button className="btn bg-orange-600 border-orange-600 hover:bg-orange-700 hover:border-orange-700 text-white w-full bg-white">Place Booking</button>
     
           </div>
         </form>

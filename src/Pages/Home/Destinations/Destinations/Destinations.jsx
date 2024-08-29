@@ -7,7 +7,7 @@ const Destinations = () => {
    
     return (
         <div id="places" className="my-5 px-5">
-            <h1 className="text-6xl font-bold text-center my-14">Explore the Beautiful Places</h1>
+            <h1 className="lg:text-5xl md:text-3xl sm:text-2xl text-xl font-bold text-center my-14">Explore the Beautiful Places</h1>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 justify-items-center">
                 {
                     plans.map(destination => <Destination

@@ -68,7 +68,7 @@ const Menubar = () => {
                       <NavDropdown.Item as={Link} to='/managebookings'>
                       Manage All Bookings
                       </NavDropdown.Item>
-                      <NavDropdown.Item as={Link}>
+                      <NavDropdown.Item as={Link} to='/addplaces'>
                       Add Places
                       </NavDropdown.Item>
                         
